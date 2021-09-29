@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        td{
+             word-wrap:break-word;
+          }
+        table, th, td {
+            border: 1px solid black;
+                }
+        body { width: 100%; height: 100%; }
+      </style>
+    <%- include('../partials/head')%>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<main>
+    <div class="jumbotron">
+        <table>
+            <tr>
+                <th>Nº   </th>
+                <th>Técnico</th>
+                <th>Acompanhate</th>
+                <th>Telefone</th>
+                <th>Cliente</th>
+                <th>Comentarios 1</th> 
+                <th>Comentarios 2</th> 
+                <th>Avaliação</th> 
+                <th>Opção</th> 
+                 
+                
+            </tr>
+            <% for (let index = 0; index < row.length; index++) { %>
+            <tr>
+                <td><%-row[index].numero_atendimento%></td> 
+                <td><%-row[index].nome_tec%></td> 
+                <td><%-row[index].atend_nome_cliente%></td> 
+                <td><%-row[index].atend_telefone%></td> 
+                <td><%-row[index].nome_cliente%></td>
+                <td><%-row[index].atend_comentarios%></td>
+                <td><%-row[index].atend_comentarios_apos%></td>
+                <form action="/nota">
+                <td><textarea name="avaliacao" ></textarea> </td>
+                <td>
+                    
+                    <input type="hidden" id="numero_atendimento" name="numero_atendimento" value="<%-row[index].numero_atendimento%>">
+                    <select name="nota" id="nota">
+                        <option value="-" selected></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">NA</option>
+                        </select> 
+                        <button type="submit" >Salvar</button>
+                </td>
+            </form>
+            </tr>     
+               <%}%> 
+            
+        </table>
+    </div>
+ </main>
+    
+<footer>
+     <%- include('../partials/footer'); %>
+</footer>
+    
+</body>
+</html>
