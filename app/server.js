@@ -1,6 +1,6 @@
 // load the things we need
 var express = require('express');
-const server = 'http://192.168.0.71:8080/'
+const server = 'http://192.168.0.29:8083/'
 const db = require("./views/db/db");
 var app = express();
 
