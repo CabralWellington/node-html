@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 // index page
 app.get('/', async function(req, res) {
     const conn = await db.connect();
-    const [rows] = await conn.query('select numero_atendimento,nome_tec,atend_nome_cliente ,nome_cliente,atend_telefone,atend_comentarios, atend_comentarios_apos from atendimentos inner join setor on nome_tec = nome_tec_setor where atend_status = "Fechado"  and  dt_fechamento > CURDATE()-INTERVAL 0 DAY and atend_nota = "X_X" and cidade = "Manaus"  and (atend_tipo = "ATENDIMENTO TÉCNICO" OR atend_tipo = "RETORNO_CHAMADO" OR atend_tipo = "MANUTENÇÃO_PREVENTIVA") ')
+    const [rows] = await conn.query('select numero_atendimento,nome_tec,atend_nome_cliente ,nome_cliente,atend_telefone,atend_comentarios, atend_comentarios_apos from atendimentos inner join setor on nome_tec = nome_tec_setor where atend_status = "Fechado"  and  dt_fechamento > CURDATE()-INTERVAL 1 DAY and atend_nota = "X_X" and cidade = "Manaus"  and (atend_tipo = "ATENDIMENTO TÉCNICO" OR atend_tipo = "RETORNO_CHAMADO" OR atend_tipo = "MANUTENÇÃO_PREVENTIVA") ')
     res.render('pages/index',{row:rows});
 });
 
