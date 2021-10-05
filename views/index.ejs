@@ -231,11 +231,11 @@
                                             <td><%-row[index].atend_comentarios%></td>
                                             <td><%-row[index].atend_comentarios_apos%></td>
                                             <form action="/nota">
-                                            <td><textarea name="avaliacao" ></textarea> </td>
+                                            <td><textarea class="form-control" rows="4" id="comment"></textarea></textarea> </td>
                                             <td>
                                                 
                                                 <input type="hidden" id="numero_atendimento" name="numero_atendimento" value="<%-row[index].numero_atendimento%>">
-                                                <select name="nota" id="nota">
+                                                <select name="nota" id="nota" class="form-control form-control-lg">
                                                     <option value="-" selected></option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -243,8 +243,9 @@
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
                                                     <option value="6">NA</option>
-                                                    </select> 
-                                                    <button type="submit" >Salvar</button>
+                                                    </select>
+                                                </br>
+                                                    <button type="submit" class="btn btn-primary" >Salvar</button>
                                             </td>
                                         </form>
                                         </tr>     
@@ -252,12 +253,15 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>Nº   </th>
+                                                <th>Técnico</th>
+                                                <th>Acompanhate</th>
+                                                <th>Telefone</th>
+                                                <th>Cliente</th>
+                                                <th>Comentarios 1</th> 
+                                                <th>Comentarios 2</th> 
+                                                <th>Avaliação</th> 
+                                                <th>Opção</th> 
                                             </tr>
                                         </tfoot>
                                     </table>
